@@ -1,4 +1,4 @@
-## Javascript / Typescript
+## Javascript
 
 * **Filter(Boolean)**: Retorna somente se a condição for verdadeira, ignorando os valores "falsy" como null e undefined.
 
@@ -24,10 +24,4 @@ result = (a !== null && a !== undefined) ? a : b
 
 ```js
 isDevelopment && console.log("Ambiente de Desenvolvimento")
-```
-
-* **[TS] Tipagem de Função**: A função handleClick recebe um parâmetro do tipo 'NUMBER' e não retorna nada 'VOID'.
-
-```ts
-handleClick: (id: number) => void;
 ```
