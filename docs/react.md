@@ -1,5 +1,9 @@
 ## React / React Native / Next / Gatsby
 
+### **Next.js**
+
+Framework React que utiliza algumas ferramentas Javascript baseadas em Rust que possibiltam o uso de algumas fetaures do backend para processas itens no front.
+
 ### **React**
 
 * **Source Map:** Possibilita ver o código da aplicação mesmo no arquivo bundle gerado pelo Webpack. **Atenção para a segurança!** <https://www.capscode.in/blog/how-to-hide-reactjs-code-from-browser#env-file-in-reactjs>
