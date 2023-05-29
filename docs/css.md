@@ -1,5 +1,11 @@
 ## CSS
 
+### Geral
+
+* **component.module.css**: Nesse padrão somente o componente que importa o css em questão tem acesso ao mesmo.
+
+* **global.css**: Nesse padrão temos o css disponível de forma global.
+
 ### Estilos de Escrita
 
 * **OOCSS**: Todo padrão visual que pode se repetir no projeto é identificado através de uma classe. Em sua definição procura separar as propriedades de estrutura e de skin
