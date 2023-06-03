@@ -1,17 +1,18 @@
-# 📚 Anotações
+# 📚 Annotations
 
 ![GitHub](https://img.shields.io/github/license/felipe-b-oliveira/annotations)
 
-Repositório de anotações de estudo
+A doc repository with study annotations
 
-## Conteúdo:
+## Contents:
 
-- [Geral](docs/general.md)
+- [General](docs/general.md)
 - [CSS](docs/css.md)
 - [Javascript / Typescript](docs/js-ts.md)
-- [React / React Native / Next / Gatsby](docs/react.md)
+- [React / React Native / Gatsby](docs/react.md)
+- [Next](docs/next.md)
 - [Links](docs/links.md)
 
-## Licença
+## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
