@@ -1,33 +1,71 @@
-## React / React Native / Next / Gatsby
-
-### **Next.js**
-
-Framework React que utiliza algumas ferramentas Javascript baseadas em Rust que possibiltam o uso de algumas fetaures do backend para processas itens no front.
+## React / React Native / Gatsby
 
 ### **React**
 
-* **Source Map:** Possibilita ver o código da aplicação mesmo no arquivo bundle gerado pelo Webpack. **Atenção para a segurança!** <https://www.capscode.in/blog/how-to-hide-reactjs-code-from-browser#env-file-in-reactjs>
+It's a Javascript lib that uses concepts from funcional programming to manage the web DOM through effects in in the elements of it.
 
-* **Programação Funcional - Imutabilidade**: Conceito da programação funcional na qual o React se inspirou, diz que não devemos alterar o objeto original, para trabalharmos com eles, devemos criar cópias desse objeto com as alterações que queremos.
+#### **React | Concepts**
+
+* **Functional Programming - Imutability**: A Functional Programming concept, when working on this concept we are not allowed to modify the original object/array
+itself but instead, we should always work based on a copy of the original item.
 
 ```js
-const listaDeFrutas = ['maçã', 'pêssego', 'goiaba']
+const fruitsArray = ['apple', 'peach', 'guava']
 
-const novaListaDeFrutas = [...listaDeFrutas, 'banana']
+const newFruitsArray = [...fruitsArray, 'banana']
 ```
 
-* **Refresh Webpack Plugin**: Mantém alterações no state para fins específicos.
+* **React HOC - High Order Components**: Works the same ways of Javascript HOF. In React this technique allow us to create reusable components extending its features.
+We have a function that receives one component as parameter and returns a new component that encapsulates the original component. We can use to add the pagination
+feature to a component that render a list of itens for example.
 
-#### **React / Performance**
+```js
+import React, { useState } from 'react';
 
-* **Divisão de Código/Code Splitting**: Técnica de dividir o código em arquivo menores, permitindo que a aplicação carregue o conteúdo parcialmente na medida em que os recursos são requisitados.
+const withPagination = (Component) => {
+  return (props) => {
+    const [currentPage, setCurrentPage] = useState(1);
 
-Na maioria das vezes a divisão do código deve ser feita ao nível da rota, mas também pode ser usado para as partes 'lazy load' da aplicação na qual o carregamento é feito aos poucos também.
+    const handlePageChange = (page) => {
+      setCurrentPage(page);
+    }
 
-* **Otimização de Componentes e States** 
-    - Não coloque tudo em um único state. divida o state global em múltiplas 'stores' de acordo com onde o state será usado.
-    - Mantenha o state o mais próximo possível de onde será utilizado.
-    - Se houver um cálculo custoso no state, utilize uma função inicializadora de state ao invés de executá-lo diretamente, porque essa função será executada apenas uma vez.
+    return (
+      <Component
+        {...props}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
+    );
+  }
+}
+
+const ItemList = (props) => {
+  return (
+    <div>
+      {/* Shows itens list */}
+      {/* Shows the pagination controls */}
+    </div>
+  );
+}
+
+const PagedItemList = withPagination(ItemList);
+```
+
+#### **React | Observations**
+
+* **Source Map:** Allows to see the application code even in the bundle file created by Webpack! **Security alert!** <https://www.capscode.in/blog/how-to-hide-reactjs-code-from-browser#env-file-in-reactjs>
+
+#### **React | Performance Tips**
+
+* **Code Splitting**: Web development technique where we split the code in smaller files allowing the application to have a faster loading time. In the most
+cases the code splitting should be made at the route level, but we can also use as a 'lazy loading' to load elements on demand.
+
+* **States and Components Otimization** 
+    - In Redux or others global state managers, is a good pratice to split the global state when possible in mutiple stores according to where we have to use
+    these states (usually in big applications).
+    - We should keep states close as possible to where it will be used.
+    - If there is a costly logic in the state, use a state initializer function instead of executing it directly, because this function will be executed only once.
 
 ```js
 // instead of this which would be executed on every re-render:
