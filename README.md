@@ -7,6 +7,7 @@ A doc repository with study annotations
 ## Contents:
 
 - [General](docs/general.md)
+- [Git](docs/git.md)
 - [CSS](docs/css.md)
 - [Javascript / Typescript](docs/js-ts.md)
 - [React / React Native / Gatsby](docs/react.md)
