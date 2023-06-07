@@ -1,35 +1,35 @@
 ## CSS
 
-### Geral
+### General
 
-* **component.module.css**: Nesse padrão somente o componente que importa o css em questão tem acesso ao mesmo.
+* **component.module.css**: When we use css module, only the component in the folder have the access to css file.
 
-* **global.css**: Nesse padrão temos o css disponível de forma global.
+* **global.css**: When we don't use .module and only put the css extension the css file is available globally.
 
-### Estilos de Escrita
+### CSS Patterns
 
-* **OOCSS**: Todo padrão visual que pode se repetir no projeto é identificado através de uma classe. Em sua definição procura separar as propriedades de estrutura e de skin
+* **OOCSS**: Each repeatable visual pattern is identified through a class. This patters tries to separate the structures and properties.
 
-* **SMACSS**: Baseado nas cinco categorias de regras de CSS: base, layout, module, state e theme.
+* **SMACSS**: Pattern based on the five css rules categories: base, layout, module, state e theme.
 
-* **DRY CSS**: Possui o princípio de não repetir propriedades com mesmos valores em seu código, quando isso ocorrer as mesmas deverão ser agrupadas.
+* **DRY CSS**: Pattern tha have the principle of don't repeat properties with equals values, when this occurs these properties must be grouped.
 
-* **BEM**: Convenção de nomenclatura de css, tem como etsrutura básica 'bloco, elemento e modificador'.
+* **BEM**: CSS naming convention, has as the basic structure 'block, element and modifier'.
 
 ```html
   <div class="c-menu__item">
-    <a href="#" class="c-menu__link c-menu__link--disabled">Outro item</a>
+    <a href="#" class="c-menu__link c-menu__link--disabled">New Item</a>
   </div>
 ```
 ```css
 .c-menu__link--disabled {}
 ```
 
-### Pré-processadores
+### CSS Pre-Processors
 
-* **SASS**: Pré-processador de css, muito útil para manter uma organização dos estilos, principalmente pela possibilidade de implementação de herança, tal como na Orientação a Objetos.
+* **SASS**: A popular css pre-processor, useful for styles organization, it implements some Object-Orientation concepts like heritage that helps in css organization (try to solves the !important problem)
 
-* **SASS - '&'**: O '&' no SASS indica uma referência do elemento em questão a ele mesmo. No exemplo abaixo estamos aplicando 'margin-top' a todas as 'li' que também possuem uma li acima dela.<br>
+* **SASS - '&'**: The symbol '&' in SASS indicates a element self reference. We can see this in the example above. In the example we are applying the 'margin-top' to all 'li' elements that also have another 'li' element above it.<br>
 
 ```css
 li {
@@ -39,4 +39,4 @@ li {
 }
 ```
 
-* **Box-Model**: 'border-box' -> Desconsidera a 'border' e o 'padding' no tamanho total do elemento. 'content-box' -> Soma a 'border' e o 'padding' no tamanho total do elemento. Por isso geralmente esse estilo é aplicado para todos os elementos.
+* **Box-Model**: 'border-box' -> Disregard the 'border' and 'padding' in the element total size. 'content-box' -> Sums the 'border' and 'padding' in the element total size. Because this behavior, usually this style is applyed to all elements.
